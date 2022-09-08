@@ -1,0 +1,40 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model User {
+    id Int @id @default(autoincrement())
+    name String @unique
+    pooints Int
+    storyCreated Story[] @relation("author")
+    storyGained Story[] @relation("gained")
+}
+
+model Category {
+    id Int @id @default(autoincrement())
+    name String @unique
+    story Story[] @relation("category")
+}
+
+model Story {
+    id          Int @id @default(autoincrement())
+    points      Int
+    for         User?    @relation("gained",fields: [forId], references: [id])
+    forId       Int?
+    confirmed   Boolean
+    createdAt   DateTime @default(now())
+    author      User?    @relation("author",fields: [authorId], references: [id])
+    authorId    Int?
+    category    Category?    @relation("category",fields: [categoryID], references: [id])
+    categoryID  Int?
+}
