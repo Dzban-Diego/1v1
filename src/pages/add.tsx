@@ -6,10 +6,11 @@ import { trpc } from '../utils/trpc'
 import { SelectUser } from '../components/formInputs/SelectUser'
 import { BsPlusLg } from 'react-icons/bs'
 import { BiMinus } from 'react-icons/bi'
-import { router } from 'next/client'
+import { useRouter } from 'next/router'
 
 const Add: NextPage = () => {
-  const { data, mutate, isLoading } = trpc.useMutation(['points.create'])
+  const router = useRouter()
+  const { mutate, isLoading } = trpc.useMutation(['points.create'])
 
   const [pointCount, setPointCount] = useState('0')
   const [user, setUser] = useState('')

@@ -4,7 +4,7 @@ import { prisma } from '../db/client'
 
 export const pointsRouter = createRouter()
   .mutation('.getAll', {
-    async resolve({ input }) {
+    async resolve({}) {
       const users = await prisma.user.findMany({
         select: {
           name: true,

@@ -3,7 +3,6 @@ import { FaThList } from 'react-icons/fa'
 import Link from 'next/link'
 import { BsPlusLg } from 'react-icons/bs'
 import { BiCategoryAlt } from 'react-icons/bi'
-import { router } from 'next/client'
 
 const NavBar = ({ page }: { page: pages }) => {
   const mainButtonClasss = 'w-9 h-9'
