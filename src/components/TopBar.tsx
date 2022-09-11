@@ -1,5 +1,7 @@
 import { trpc } from '../utils/trpc'
 import { useEffect } from 'react'
+import { MdBolt } from 'react-icons/md'
+import Image from 'next/image'
 
 const TopBar = () => {
   const points = trpc.useMutation(['points.getAll'])
@@ -10,31 +12,28 @@ const TopBar = () => {
 
   return (
     <>
-      <button onClick={() => points.mutate()} className={'bg-primary w-full'}>
-        {points.data && (
+      <button
+        onClick={() => points.mutate()}
+        className={
+          'bg-primary w-full flex flex-row items-center justify-center text-4xl h-1/5'
+        }
+      >
+        {points.data ? (
           <>
-            <span className={'font-extrabold'} style={{ fontSize: '24vw' }}>
-              {points.data[1].name.substring(0, 1)}
-            </span>
-            <span
-              className={'font-extrabold mx-4'}
-              style={{ fontSize: '20vw' }}
-            >
+            <Image src={'/masiek.png'} alt={'M'} width={'150'} height={'150'} />
+            <span className={'font-extrabold mx-4'}>
               {points.data[1].points}
             </span>
-            <span className={'font-extrabold'} style={{ fontSize: '12vw' }}>
-              /
+            <span className={''}>
+              <MdBolt />
             </span>
-            <span
-              className={'font-extrabold mx-4'}
-              style={{ fontSize: '20vw' }}
-            >
+            <span className={'font-extrabold mx-4'}>
               {points.data[2].points}
             </span>
-            <span className={'font-extrabold'} style={{ fontSize: '24vw' }}>
-              {points.data[2].name.substring(0, 1)}
-            </span>
+            <Image src={'/olo.png'} alt={'M'} width={'150'} height={'150'} />
           </>
+        ) : (
+          <span className={'text-6xl'}>Ładowanie...</span>
         )}
       </button>
     </>
