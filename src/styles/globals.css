@@ -6,3 +6,43 @@
 .hand{
     font-family: 'Fira Mono', monospace;
 }
+
+.slideRight{
+    animation: .6s ease-out 0s 1 sliteInFronRight;
+}
+
+.slideLeft{
+    animation: .6s ease-out 0s 1 sliteInFronLeft;
+}
+
+main{
+    animation: .6s ease-out 0s 1 slideInFromBottom;
+}
+
+@keyframes sliteInFronRight {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes sliteInFronLeft {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

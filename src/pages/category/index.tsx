@@ -9,7 +9,6 @@ const CategoryList: NextPage = () => {
 
   const renderCategories = () => {
     if (data) {
-      console.log(data)
       return data.map((category) => (
         <div
           className={
