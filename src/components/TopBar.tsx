@@ -33,7 +33,7 @@ const TopBar = () => {
             <Image src={'/olo.png'} alt={'M'} width={'150'} height={'150'} />
           </>
         ) : (
-          <span className={'text-6xl'}>Ładowanie...</span>
+          <span className={'text-3xl'}>Ładowanie...</span>
         )}
       </button>
     </>

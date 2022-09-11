@@ -3,7 +3,7 @@ import type { ReactElement } from 'react'
 import NavBar from '../NavBar'
 import Head from 'next/head'
 
-export type pages = 'home' | 'add'
+export type pages = 'home' | 'add' | 'category' | 'addCagegory'
 
 const Layout = ({
   children,
