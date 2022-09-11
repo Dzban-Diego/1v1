@@ -34,12 +34,16 @@ type storyItem = {
 const StoryItem: React.FC<{ item: storyItem }> = ({ item }) => {
   return (
     <div
-      className={`m-3 rounded-3xl flex flex-row justify-between p-2 px-4 items-center ${
-        item.forId === 1 ? 'bg-lightsecondary' : 'bg-third'
+      className={`m-3 rounded-3xl flex justify-between p-2 px-4 items-center ${
+        item.forId === 1 ? 'bg-lightsecondary' : 'bg-third flex-row-reverse'
       }`}
     >
       <div className={'text-6xl'}>{item.points}</div>
-      <div className={'flex flex-col items-end'}>
+      <div
+        className={`flex flex-col ${
+          item.forId === 1 ? 'items-end' : 'items-start'
+        }`}
+      >
         {item.category && (
           <span className={'text-3xl'}>{item.category.name}</span>
         )}
