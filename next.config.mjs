@@ -1,4 +1,5 @@
 import { env } from "./src/env/server.mjs";
+import withPWA from "next-pwa";
 
 /**
  * Don't be scared of the generics here.
@@ -12,7 +13,12 @@ function defineNextConfig(config) {
   return config;
 }
 
-export default defineNextConfig({
-  reactStrictMode: true,
-  swcMinify: true,
-});
+export default withPWA(defineNextConfig({
+  // reactStrictMode: true,
+  // swcMinify: true,
+  // pwa: {
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+  // }
+}));

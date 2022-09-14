@@ -1,17 +1,33 @@
 {
-  "short_name": "1v1",
-  "name": "1v1",
-  "icons": [
-    {
-      "src": "logo.png",
-      "type": "image/png",
-      "sizes": "416x416"
-    }
-  ],
-  "scope": "/",
-  "start_url": "/",
-  "background_color": "#ff00ff",
-  "Theme_color": "#ff00ff",
-  "display": "standalone",
-  "splash_pages": null
+    "theme_color": "#1e212d",
+    "background_color": "#1e212d",
+    "display": "fullscreen",
+    "scope": "/",
+    "start_url": "/",
+    "name": "1v1",
+    "short_name": "1v1",
+    "description": "Aplikacja do liczenia punkt\u00f3w i rywalizacji z przyjaciu\u0142mi.",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
 }
