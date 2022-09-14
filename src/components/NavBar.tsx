@@ -17,6 +17,7 @@ const NavBar = ({ page }: { page: pages }) => {
         return (
           <button
             onClick={openStory}
+            aria-label="Historia"
             className={'h-fit bg-secondary rounded-2xl my-6 mx-6 p-2 text-3xl'}
           >
             <FaThList />
@@ -27,6 +28,7 @@ const NavBar = ({ page }: { page: pages }) => {
         return (
           <button
             onClick={openStory}
+            aria-label="Historia"
             className={'h-fit bg-secondary rounded-2xl my-6 mx-6 p-2 text-3xl'}
           >
             <FaThList />
@@ -37,6 +39,7 @@ const NavBar = ({ page }: { page: pages }) => {
         return (
           <button
             onClick={openCategory}
+            aria-label="Kategorie"
             className={'h-fit bg-secondary rounded-2xl my-6 mx-6 p-2 text-3xl'}
           >
             <BiCategoryAlt />
@@ -51,28 +54,34 @@ const NavBar = ({ page }: { page: pages }) => {
     switch (page) {
       case 'add': {
         return (
-          <button onClick={() => router.push('/')}>
+          <button aria-label="Home" onClick={() => router.push('/')}>
             <FaThList className={mainButtonClasss} />
           </button>
         )
       }
       case 'home': {
         return (
-          <button onClick={() => router.push('/add')}>
+          <button aria-label="Dodaj" onClick={() => router.push('/add')}>
             <BsPlusLg className={mainButtonClasss} />
           </button>
         )
       }
       case 'category': {
         return (
-          <button onClick={() => router.push('/category/add')}>
+          <button
+            aria-label="Dodaj kategorie"
+            onClick={() => router.push('/category/add')}
+          >
             <BsPlusLg className={mainButtonClasss} />
           </button>
         )
       }
       case 'addCagegory': {
         return (
-          <button onClick={() => router.push('/category')}>
+          <button
+            aria-label="Kategorie"
+            onClick={() => router.push('/category')}
+          >
             <BiCategoryAlt className={mainButtonClasss} />
           </button>
         )
@@ -100,6 +109,7 @@ const NavBar = ({ page }: { page: pages }) => {
       </div>
       <button
         onClick={openRight}
+        aria-label="Feature"
         className={'h-fit bg-secondary rounded-2xl my-6 mx-6 p-2 text-3xl'}
       >
         <BiCategoryAlt />
