@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 
 export const StoryList = () => {
   const story = trpc.useMutation('story.getAll')
+  const threTimes = [1, 2, 3]
 
   useEffect(() => {
     story.mutate()
@@ -13,12 +14,23 @@ export const StoryList = () => {
       return story.data.map((storyone) => (
         <StoryItem key={JSON.stringify(storyone)} item={storyone} />
       ))
-    } else {
-      return <span>no data</span>
     }
   }
 
-  return <>{story.data && <div>{renderList()}</div>}</>
+  const renderLoader = () => {
+    return threTimes.map((loader) => (
+      <>
+        <div
+          key={loader}
+          className={`m-3 rounded-3xl flex justify-between p-2 px-4 items-center bg-gray-400 animate-pulse`}
+        >
+          <div className={'text-6xl text-gray-400'}>.</div>
+        </div>
+      </>
+    ))
+  }
+
+  return <>{story.data ? <div>{renderList()}</div> : <>{renderLoader()}</>}</>
 }
 
 type storyItem = {

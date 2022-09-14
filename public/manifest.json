@@ -1,0 +1,17 @@
+{
+  "short_name": "1v1",
+  "name": "1v1",
+  "icons": [
+    {
+      "src": "logo.png",
+      "type": "image/png",
+      "sizes": "416x416"
+    }
+  ],
+  "scope": "/",
+  "start_url": "/",
+  "background_color": "#ff00ff",
+  "Theme_color": "#ff00ff",
+  "display": "standalone",
+  "splash_pages": null
+}

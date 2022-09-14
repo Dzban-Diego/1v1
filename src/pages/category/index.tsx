@@ -1,8 +1,6 @@
 import type { NextPage } from 'next'
-import { StoryList } from '../../components/StoryList'
 import Layout from '../../components/Layouts/Default'
 import { trpc } from '../../utils/trpc'
-import { useEffect } from 'react'
 
 const CategoryList: NextPage = () => {
   const { data } = trpc.useQuery(['category.getAll'])

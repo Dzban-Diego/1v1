@@ -5,18 +5,18 @@ import Image from 'next/image'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 
 const TopBar = () => {
-  const points = trpc.useMutation(['points.getAll'])
+  const { data, mutate } = trpc.useMutation(['points.getAll'])
 
   useEffect(() => {
-    points.mutate()
-  }, [])
+    mutate()
+  }, [mutate])
 
   return (
     <>
       <button
-        onClick={() => points.mutate()}
+        onClick={() => mutate()}
         className={
-          'bg-primary w-full flex flex-row items-center justify-between text-4xl h-1/5'
+          'bg-primary w-full flex flex-row items-center justify-between text-4xl '
         }
       >
         <Image
@@ -26,29 +26,33 @@ const TopBar = () => {
           height={'150'}
           className={'slideLeft'}
         />
-        {points.data ? (
+        {data ? (
           <>
-            <span className={'font-extrabold mx-4'}>
-              {points.data[1].points}
+            <span className={'font-extrabold mx-4 w-1/4'}>
+              {data[1].points}
             </span>
-            <span className={''}>
+            <span>
               <MdBolt />
             </span>
-            <span className={'font-extrabold mx-4'}>
-              {points.data[2].points}
+            <span className={'font-extrabold mx-4 w-1/4'}>
+              {data[2].points}
             </span>
           </>
         ) : (
-          <span className={'text-3xl animate-spin'}>
-            <AiOutlineLoading3Quarters />
-          </span>
+          <>
+            <span className={'font-extrabold mx-4 w-1/4'}></span>
+            <span className={'animate-spin'}>
+              <AiOutlineLoading3Quarters />
+            </span>
+            <span className={'font-extrabold mx-4 w-1/4'}></span>
+          </>
         )}
         <Image
           src={'/olo.png'}
           alt={'M'}
           width={'150'}
           height={'150'}
-          className={'slideRight'}
+          className={'slideRight transition-all'}
         />
       </button>
     </>

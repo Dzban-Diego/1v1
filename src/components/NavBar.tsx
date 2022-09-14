@@ -1,6 +1,5 @@
 import { pages } from './Layouts/Default'
 import { FaThList } from 'react-icons/fa'
-import Link from 'next/link'
 import { BsPlusLg } from 'react-icons/bs'
 import { BiCategoryAlt } from 'react-icons/bi'
 import { useRouter } from 'next/router'
@@ -52,30 +51,30 @@ const NavBar = ({ page }: { page: pages }) => {
     switch (page) {
       case 'add': {
         return (
-          <Link href="/">
+          <button onClick={() => router.push('/')}>
             <FaThList className={mainButtonClasss} />
-          </Link>
+          </button>
         )
       }
       case 'home': {
         return (
-          <Link href="/add">
+          <button onClick={() => router.push('/add')}>
             <BsPlusLg className={mainButtonClasss} />
-          </Link>
+          </button>
         )
       }
       case 'category': {
         return (
-          <Link href="/category/add">
+          <button onClick={() => router.push('/category/add')}>
             <BsPlusLg className={mainButtonClasss} />
-          </Link>
+          </button>
         )
       }
       case 'addCagegory': {
         return (
-          <Link href="/category">
+          <button onClick={() => router.push('/category')}>
             <BiCategoryAlt className={mainButtonClasss} />
-          </Link>
+          </button>
         )
       }
     }
