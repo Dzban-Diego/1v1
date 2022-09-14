@@ -20,6 +20,7 @@ const Layout = ({
         <link rel="apple-touch-icon" href="logo.png" />
         <link rel="apple-touch-icon" sizes="72×72" href="logo.png" />
         <link rel="apple-touch-icon" sizes="114×114" href="logo.png" />
+        <meta name="theme-color" content="#042940" />
       </Head>
       <div className={'flex justify-center hand'}>
         <div
